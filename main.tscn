@@ -13,6 +13,7 @@ margin_right = 1026.0
 margin_bottom = 46.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
 margin_right = 1026.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
@@ -87,7 +88,6 @@ size_flags_horizontal = 3
 text = "10"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_top = 24.0
 margin_right = 1026.0
 margin_bottom = 48.0
@@ -145,10 +145,17 @@ text = "->"
 
 [node name="invert" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 439.0
-margin_right = 923.0
+margin_right = 679.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "Invertir"
+
+[node name="Reset" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 683.0
+margin_right = 923.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "RESET"
 
 [node name="borde" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 927.0
@@ -164,5 +171,6 @@ text = "INFO"
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer2/viento" to="." method="_on_viento_text_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/viento_direction" to="." method="_on_viento_favor_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/invert" to="." method="_on_invert_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Reset" to="." method="_on_Reset_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/borde" to="." method="_disabled_borde"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/INFO" to="." method="_on_INFO_pressed"]

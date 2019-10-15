@@ -28,7 +28,10 @@ func _callculate_on_click(val):
 
 func change_viento(val):
 	var newViento = _get_viento() + val
-	get_node("VBoxContainer/HBoxContainer2/viento").text = String(newViento)
+	set_viento(newViento)
+	pass
+func set_viento(val):
+	get_node("VBoxContainer/HBoxContainer2/viento").text = String(val)
 	_callculate_angule()
 	pass
 	
@@ -127,4 +130,10 @@ func _on_viento_text_entered(new_text):
 
 func _on_INFO_pressed():
 	OS.alert("Gracias por usar DDTNKC. Att: AndrusGerman (andrusaleman@gmail.com)")
+	pass # Replace with function body.
+
+
+func _on_Reset_pressed():
+	on_click_num = 0
+	set_viento(0)
 	pass # Replace with function body.
