@@ -3,6 +3,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 var viento_direction = 0
+var on_click_num = 0
 var favor_viento = false
 # var b = "text"
 
@@ -14,7 +15,16 @@ func _ready():
 
 	get_node("VBoxContainer/HBoxContainer2/+1viento").connect("pressed",self,"change_viento",[1])
 	get_node("VBoxContainer/HBoxContainer2/+01viento").connect("pressed",self,"change_viento",[0.1])
+	
+	var childs = get_node("VBoxContainer/HBoxContainer").get_children()
+	for x in childs:
+		x.connect("pressed",self,"_callculate_on_click",[int(x.name)-1])
 	pass # Replace with function body.
+func _callculate_on_click(val):
+	on_click_num = val
+	_callculate_angule()
+	pass
+
 
 func change_viento(val):
 	var newViento = _get_viento() + val
@@ -64,10 +74,13 @@ func _on_invert_pressed():
 func _callculate_angule():
 	var childrens = get_node("VBoxContainer/HBoxContainer").get_children()
 	for x in childrens:
-		var name  = x.name
-		var num = 90 - int(name)
-		num += _get_value_viento()
-		x.text = name + ":"+String(round(num))
+		var name  = (int(x.name) - on_click_num)
+		var num = 90 - name
+		var numRound = round(num + _get_value_viento())
+		if (name<= 0):
+			x.text = ""
+		else:
+			x.text = String(name) + ":"+String(numRound)
 	pass
 	
 func _viento_direction_invert():
