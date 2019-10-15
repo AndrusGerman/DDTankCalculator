@@ -93,38 +93,76 @@ margin_right = 1026.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 
-[node name="borde" type="Button" parent="VBoxContainer/HBoxContainer2"]
-margin_right = 50.0
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_top = 5.0
+margin_right = 87.0
+margin_bottom = 19.0
+text = "VientoFuerza:"
+
+[node name="-01viento" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 91.0
+margin_right = 131.0
 margin_bottom = 24.0
-text = "Borde"
+text = "+0.1"
+
+[node name="-1viento" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 135.0
+margin_right = 160.0
+margin_bottom = 24.0
+text = "-1"
 
 [node name="viento" type="LineEdit" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 54.0
-margin_right = 112.0
+margin_left = 164.0
+margin_right = 222.0
 margin_bottom = 24.0
+text = "0"
 expand_to_text_length = true
-placeholder_text = "Viento"
 
-[node name="viento_fafor" type="Button" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 116.0
-margin_right = 244.0
+[node name="+1viento" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 226.0
+margin_right = 254.0
 margin_bottom = 24.0
-text = "VientoFavor: False"
+text = "+1"
+
+[node name="+01viento" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 258.0
+margin_right = 298.0
+margin_bottom = 24.0
+text = "+0.1"
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 302.0
+margin_top = 5.0
+margin_right = 406.0
+margin_bottom = 19.0
+text = "VientoDirection:"
+
+[node name="viento_direction" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 410.0
+margin_right = 435.0
+margin_bottom = 24.0
+text = "->"
 
 [node name="invert" type="Button" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 248.0
-margin_right = 977.0
+margin_left = 439.0
+margin_right = 923.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "Invertir"
+
+[node name="borde" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 927.0
+margin_right = 977.0
+margin_bottom = 24.0
+text = "Borde"
 
 [node name="INFO" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 981.0
 margin_right = 1026.0
 margin_bottom = 24.0
 text = "INFO"
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/borde" to="." method="_disabled_borde"]
-[connection signal="text_entered" from="VBoxContainer/HBoxContainer2/viento" to="." method="_on_viento_text_entered"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/viento_fafor" to="." method="_on_viento_favor_pressed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer2/viento" to="." method="_on_viento_text_entered"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/viento_direction" to="." method="_on_viento_favor_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/invert" to="." method="_on_invert_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/borde" to="." method="_disabled_borde"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/INFO" to="." method="_on_INFO_pressed"]

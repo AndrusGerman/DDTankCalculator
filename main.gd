@@ -2,23 +2,40 @@ extends Control
 
 # Declare member variables here. Examples:
 # var a = 2
-var viento_favor = false
+var viento_direction = 0
+var favor_viento = false
 # var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_callculate_angule()
+	get_node("VBoxContainer/HBoxContainer2/-1viento").connect("pressed",self,"change_viento",[-1])
+	get_node("VBoxContainer/HBoxContainer2/-01viento").connect("pressed",self,"change_viento",[-0.1])
+
+	get_node("VBoxContainer/HBoxContainer2/+1viento").connect("pressed",self,"change_viento",[1])
+	get_node("VBoxContainer/HBoxContainer2/+01viento").connect("pressed",self,"change_viento",[0.1])
 	pass # Replace with function body.
 
+func change_viento(val):
+	var newViento = _get_viento() + val
+	get_node("VBoxContainer/HBoxContainer2/viento").text = String(newViento)
+	_callculate_angule()
+	pass
+	
 var y = 0
 var yn = 0
+var changeN = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var bordless = OS.window_borderless
 	if (bordless):
+		changeN = false
 		OS.window_size.y = y
 	elif (yn !=0):
-		OS.window_size.y = yn
+		if (changeN == false):
+			changeN = true
+			OS.window_size.y = yn
+		
 	pass
 
 
@@ -40,6 +57,7 @@ func _on_invert_pressed():
 	for y in range(count):
 		node.add_child(childrens[count-1])
 		count = count -1
+	_viento_direction_invert()
 	pass # Replace with function body.
 
 
@@ -49,29 +67,48 @@ func _callculate_angule():
 		var name  = x.name
 		var num = 90 - int(name)
 		num += _get_value_viento()
-		x.text = name + ":"+String(num)
+		x.text = name + ":"+String(round(num))
+	pass
+	
+func _viento_direction_invert():
+	if (viento_direction  == 0):
+		get_node("VBoxContainer/HBoxContainer2/viento_direction").text = "<-"
+		viento_direction = 1
+	else:
+		get_node("VBoxContainer/HBoxContainer2/viento_direction").text = "->"
+		viento_direction = 0
 	pass
 
 func _on_viento_favor_pressed():
-	viento_favor = !viento_favor
-	get_node("VBoxContainer/HBoxContainer2/viento_fafor").text = "VientoFavor: "+ String(viento_favor)
+	_viento_direction_invert()
+	
+	var primer =  int(get_node("VBoxContainer/HBoxContainer").get_children()[0].name)
+	if (primer == 1):
+		if (viento_direction == 1):
+			favor_viento = true
+		else:
+			favor_viento = false
+	elif (primer == 10):
+		if (viento_direction == 0):
+			favor_viento = true
+		else:
+			favor_viento = false
 	_callculate_angule()
 	pass # Replace with function body.
 
 func _get_value_viento():
-	if (!viento_favor):
+	if (!favor_viento):
 		return _get_viento()*2
-	if (viento_favor):
+	if (favor_viento):
 		return _get_viento()*-2
 	pass
 
 func _get_viento():
-	return int(get_node("VBoxContainer/HBoxContainer2/viento").text)
+	return float(get_node("VBoxContainer/HBoxContainer2/viento").text)
 	pass
 
 func _on_viento_text_entered(new_text):
 	_callculate_angule()
-	print(new_text)
 	pass # Replace with function body.
 
 
