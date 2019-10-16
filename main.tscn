@@ -13,81 +13,148 @@ margin_right = 1026.0
 margin_bottom = 46.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_right = 1026.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 
+[node name="0" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 45.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "0"
+
 [node name="1" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_right = 99.0
+margin_left = 49.0
+margin_right = 94.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="2" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 98.0
+margin_right = 143.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "1"
 
-[node name="2" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 103.0
-margin_right = 202.0
+[node name="3" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 147.0
+margin_right = 192.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="4" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 196.0
+margin_right = 241.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "2"
 
-[node name="3" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 206.0
-margin_right = 305.0
+[node name="5" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 245.0
+margin_right = 290.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="6" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 294.0
+margin_right = 339.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "3"
 
-[node name="4" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 309.0
-margin_right = 408.0
+[node name="7" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 343.0
+margin_right = 388.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="8" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 392.0
+margin_right = 437.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "4"
 
-[node name="5" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 412.0
-margin_right = 511.0
+[node name="9" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 441.0
+margin_right = 486.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="10" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 490.0
+margin_right = 535.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "5"
 
-[node name="6" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 515.0
-margin_right = 614.0
+[node name="11" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 539.0
+margin_right = 584.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="12" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 588.0
+margin_right = 633.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "6"
 
-[node name="7" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 618.0
-margin_right = 717.0
+[node name="13" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 637.0
+margin_right = 682.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="14" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 686.0
+margin_right = 731.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "7"
 
-[node name="8" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 721.0
-margin_right = 820.0
+[node name="15" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 735.0
+margin_right = 780.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="16" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 784.0
+margin_right = 829.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "8"
 
-[node name="9" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 824.0
-margin_right = 923.0
+[node name="17" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 833.0
+margin_right = 878.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="18" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 882.0
+margin_right = 927.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "9"
 
-[node name="10" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 927.0
+[node name="19" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 931.0
+margin_right = 976.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="20" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 980.0
 margin_right = 1026.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "10"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
 margin_top = 24.0
 margin_right = 1026.0
 margin_bottom = 48.0

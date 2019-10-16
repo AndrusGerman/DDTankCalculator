@@ -18,10 +18,10 @@ func _ready():
 	
 	var childs = get_node("VBoxContainer/HBoxContainer").get_children()
 	for x in childs:
-		x.connect("pressed",self,"_callculate_on_click",[int(x.name)-1])
+		x.connect("pressed",self,"_callculate_on_click",[int(x.name)])
 	pass # Replace with function body.
 func _callculate_on_click(val):
-	on_click_num = val
+	on_click_num = (val)
 	_callculate_angule()
 	pass
 
@@ -77,13 +77,18 @@ func _on_invert_pressed():
 func _callculate_angule():
 	var childrens = get_node("VBoxContainer/HBoxContainer").get_children()
 	for x in childrens:
-		var name  = (int(x.name) - on_click_num)
-		var num = 90 - name
-		var numRound = round(num + _get_value_viento())
-		if (name<= 0):
-			x.text = ""
-		else:
-			x.text = String(name) + ":"+String(numRound)
+		x.text = ""
+		var name = (int(x.name) - on_click_num)
+		if ((name % 2) == 0):	
+			var num = 90 - (name/2)
+			#num -=on_click_num
+			var numRound = round(num + _get_value_viento())
+			if (int(x.name) == on_click_num):
+				x.text = "YOP"
+			elif (name<= 0):
+				x.text = ""
+			else:
+				x.text = String(name/2) + ":"+String(numRound)
 	pass
 	
 func _viento_direction_invert():
@@ -97,14 +102,13 @@ func _viento_direction_invert():
 
 func _on_viento_favor_pressed():
 	_viento_direction_invert()
-	
-	var primer =  int(get_node("VBoxContainer/HBoxContainer").get_children()[0].name)
+	var primer =  int(get_node("VBoxContainer/HBoxContainer").get_children()[1].name)
 	if (primer == 1):
 		if (viento_direction == 1):
 			favor_viento = true
 		else:
 			favor_viento = false
-	elif (primer == 10):
+	elif (primer == 19):
 		if (viento_direction == 0):
 			favor_viento = true
 		else:
