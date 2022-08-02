@@ -1,7 +1,6 @@
 extends Control
 
-# Declare member variables here. Examples:
-# var a = 2
+
 var viento_direction = 0
 var on_click_num = 0
 var favor_viento = false
@@ -84,7 +83,7 @@ func _callculate_angule():
 			#num -=on_click_num
 			var numRound = round(num + _get_value_viento())
 			if (int(x.name) == on_click_num):
-				x.text = "YOP"
+				x.text = "I._AM"
 			elif (name<= 0):
 				x.text = ""
 			else:
@@ -133,7 +132,7 @@ func _on_viento_text_entered(new_text):
 
 
 func _on_INFO_pressed():
-	OS.alert("Gracias por usar DDTNKC. Att: AndrusGerman (andrusaleman@gmail.com)")
+	OS.alert("Thanks for using DDTNKC. Att: AndrusGerman (andrusaleman@gmail.com)")
 	pass # Replace with function body.
 
 
